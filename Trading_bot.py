@@ -9,6 +9,7 @@ import tulipy as ti
 
 # public instance 
 exchange = ccxt.binance()
+print(exchange.has)
 
 #private instance
 Apikey = "your apikey"
@@ -89,7 +90,5 @@ timestamp = candles[:,0]
 Volume = candles[:,5]
 #Time first then OHLCV
 Color_of_candle = candle_color(close[-1],open[-1]) # color of the last candle
-if Color_of_candle == 1:
-    print('Green')
-else:
-    print('Red')
+amt = 10.0
+tf = exchange.transfer(amt,'fromacc','toacc')
